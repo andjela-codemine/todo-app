@@ -6,8 +6,8 @@ const listTodos = document.querySelector(".todos");
 
 const countItems = document.querySelector(".count-left");
 
-const activeButton = document.getElementById("all");
-const allButton = document.getElementById("active");
+const activeButton = document.getElementById("active");
+const allButton = document.getElementById("all");
 const completedButton = document.getElementById("completed");
 const clearCompletedButton = document.getElementById("clear-completed");
 
@@ -35,21 +35,21 @@ addTodoButton.addEventListener("click", (event) => {
   reset();
 });
 
-const updateTaskContainer = () => {
+const updateTaskContainer = (tasks = taskData) => {
   listTodos.innerHTML = "";
 
-  taskData.forEach(({ id, name, completed }) => {
+  tasks.forEach(({ id, name, completed }) => {
     const todoItem = document.createElement("div");
     todoItem.className = `todo-item ${completed ? "completed" : ""}`;
     todoItem.draggable = true;
     todoItem.innerHTML = `
-        <label class="check-label">
-          <input type="checkbox" ${completed ? "checked" : ""}>
-          <span class="check-round"></span>
-        </label>
-        <li class="todo">${name}</li>
-        <button class="btn delete" onclick="deleteTask(this)"><img src="./images/icon-cross.svg" alt="cross svg"></button>
-      `;
+          <label class="check-label">
+            <input type="checkbox" ${completed ? "checked" : ""}>
+            <span class="check-round"></span>
+          </label>
+          <li class="todo">${name}</li>
+          <button class="btn delete" onclick="deleteTask(this)"><img src="./images/icon-cross.svg" alt="cross svg"></button>
+        `;
     listTodos.appendChild(todoItem);
 
     const checkbox = todoItem.querySelector("input[type='checkbox']");
@@ -66,6 +66,7 @@ const updateTaskContainer = () => {
     });
   });
 };
+
 const reset = () => {
   inputTodo.value = "";
   currentTask = {};
@@ -86,3 +87,11 @@ const deleteTask = (buttonEl) => {
   taskData.splice(dataArrIndex, 1);
   localStorage.setItem("data", JSON.stringify(taskData));
 };
+
+allButton.addEventListener("click", () => updateTaskContainer(taskData));
+activeButton.addEventListener("click", () =>
+  updateTaskContainer(taskData.filter((task) => !task.completed))
+);
+completedButton.addEventListener("click", () =>
+  updateTaskContainer(taskData.filter((task) => task.completed))
+);
