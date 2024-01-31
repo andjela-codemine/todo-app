@@ -1,0 +1,43 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+:root{
+    font-size: 18px;
+    --bg-color: hsl(236, 33%, 92%);
+    --card-bg: hsl(0, 0%, 98%);
+    --text-color: hsl(0, 0%, 26%);
+    --inactive-color: hsl(236, 9%, 61%);
+    --active-color: hsl(220, 98%, 61%);
+    --hover-color: hsl(235, 19%, 35%);
+    --check-color: hsl(233, 11%, 84%);
+    --shadow-color: hsla(240, 5%, 85%, 0.603);
+    --plus-color: black;
+    --bg-img-mobile: url(./images/bg-mobile-light.jpg);
+    --bg-img-desktop: url(./images/bg-desktop-light.jpg);
+}
+
+a,button {
+    text-decoration: none;
+    color: var(--inactive-color);
+    user-select: none;
+}
+a:hover,.btn:hover{
+    color: var(--hover-color);
+}
+button{
+    border: none;
+    cursor: pointer;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-image: var(--bg-img-mobile);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+}
