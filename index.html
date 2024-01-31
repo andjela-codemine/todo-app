@@ -15,7 +15,7 @@
 
 <body>
   <main>
-    <section>
+    <section class="wrapper">
       <header>
         <h1>Todo</h1>
         <button class="btn theme-btn light"><img src="./images/icon-moon.svg" alt="moon svg"></button>
@@ -29,13 +29,11 @@
         <ul class="todos"></ul>
         <div class="actions">
           <p class="items-left"><span class="count-left">0</span> items left</p>
+          <button class="btn" id="all">All</button>
+          <button class="btn" id="active">Active</button>
+          <button class="btn" id="completed">Completed</button>
           <a href="#">Clear Completed</a>
         </div>
-      </div>
-      <div class="btnElems">
-        <button class="btn" id="all">All</button>
-        <button class="btn" id="active">Active</button>
-        <button class="btn" id="completed">Completed</button>
       </div>
       <p class="drag-drop">Drag and drop to reorder list</p>
       <div class="attribution">
