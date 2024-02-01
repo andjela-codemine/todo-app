@@ -15,7 +15,8 @@ const taskData = JSON.parse(localStorage.getItem("data")) || [];
 
 let currentTask = {};
 
-addTodoButton.addEventListener("click", (event) => {
+addTodoButton.addEventListener("click", (e) => {
+  e.preventDefault();
   if (inputTodo.value === "") return;
   const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
 
@@ -31,7 +32,7 @@ addTodoButton.addEventListener("click", (event) => {
     taskData[dataArrIndex] = taskObj;
   }
   localStorage.setItem("data", JSON.stringify(taskData));
-  updateTaskContainer();
+  updateTaskContainer(taskData);
   reset();
 });
 
@@ -73,7 +74,12 @@ const reset = () => {
 };
 
 clearCompletedButton.addEventListener("click", () => {
-  taskData = taskData.filter((task) => !task.completed);
+  taskData.filter((task)=>task.completed).map((task)=>{
+    const dataArrIndex = taskData.findIndex(
+      (item) => item.id === task.id
+    );
+    taskData.splice(dataArrIndex, 1);
+  })
   localStorage.setItem("data", JSON.stringify(taskData));
   updateTaskContainer();
 });
