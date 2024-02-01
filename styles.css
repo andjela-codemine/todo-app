@@ -236,8 +236,8 @@ form #todo-input {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 25px;
-    height: 25px;
+    width: 1.4rem;
+    height: 1.4rem;
     position: relative;
     background-color: var(--check-color);
     border: 1px solid var(--check-color);
@@ -246,8 +246,8 @@ form #todo-input {
 }
 
 .check-label .check-round {
-    width: 22px;
-    height: 22px;
+    width: 1.2rem;
+    height: 1.2rem;
     background-color: var(--card-bg);
     border-radius: 50%;
 }
@@ -322,3 +322,116 @@ form #todo-input {
     padding: 0.5rem 0.5rem 0.5rem 1rem;
 }
 
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 1rem;
+        margin-top: -1rem;
+        margin-left: 1rem;
+        position: inherit;
+    }
+
+    header>button {
+        margin-right: 2rem;
+        margin-top: -2rem;
+        position: relative;
+    }
+
+    body {
+        background-image: var(--bg-img-mobile);
+        margin: 2rem auto;
+    }
+
+    section.wrapper {
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    form {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        margin-top: 2rem;
+        color: var(--card-color);
+    }
+
+    form>button {
+        width: 12px;
+        height: 12px;
+    }
+
+    span {
+        display: none;
+    }
+
+    form #todo-input {
+        position: relative;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .btn.theme-btn {
+        margin-top: 1rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .actions>button {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .attribution {
+        font-size: 12px;
+        text-align: center;
+        padding: 5px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 1440px) {
+    span {
+        display: none;
+    }
+
+    body.dark {
+        background-image: var(--bg-img-desktopdark);
+        background-color: hsl(235, 24%, 19%);
+        color: hsl(236, 33%, 92%);
+    }
+
+    section.wrapper.dark {
+        background-color: hsl(233, 14%, 35%);
+        color: hsl(236, 33%, 92%);
+        flex-wrap: wrap;
+        flex: 1;
+    }
+
+    form.dark {
+        background-color: hsl(233, 14%, 35%);
+        color: hsl(236, 33%, 92%);
+        flex-wrap: wrap;
+        flex: 1;
+    }
+
+    .actions {
+        position: inherit;
+        flex-direction: row;
+        justify-content: space-evenly;
+        position: relative;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: -1rem;
+    }
+
+    .actions>button {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
