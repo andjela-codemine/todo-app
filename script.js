@@ -94,23 +94,24 @@ const updateTaskContainer = (tasks = taskData) => {
       taskData = taskData.map((task) => {
         if (task.id === id) {
           task.completed = !task.completed;
+          updateCountItems();
         }
         return task;
       });
       localStorage.setItem("data", JSON.stringify(taskData));
-      updateCountItems();
     });
   });
+  updateCountItems();
 };
 
 const reset = () => {
   inputTodo.value = "";
   currentTask = {};
 };
-// const updateCountItems = () => {
-//   const remainingCount = taskData.filter((task) => !task.completed).length;
-//   countItems.textContent = `${remainingCount} item${remainingCount !== 1 ? 's' : ''} left`;
-// };
+const updateCountItems = () => {
+  const remainingCount = taskData.filter((task) => !task.completed).length;
+  countItems.textContent = `${remainingCount} item${remainingCount !== 1 ? 's' : ''} left`;
+};
 
 clearCompletedButton.addEventListener("click", () => {
   taskData
