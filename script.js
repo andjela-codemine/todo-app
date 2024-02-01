@@ -110,7 +110,9 @@ const reset = () => {
 };
 const updateCountItems = () => {
   const remainingCount = taskData.filter((task) => !task.completed).length;
-  countItems.textContent = `${remainingCount} item${remainingCount !== 1 ? 's' : ''} left`;
+  countItems.textContent = `${remainingCount} item${
+    remainingCount !== 1 ? "s" : ""
+  } left`;
 };
 
 clearCompletedButton.addEventListener("click", () => {

@@ -1,50 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Todo app</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>Frontend Mentor | Todo app</title>
-</head>
-
-<body>
-  <main>
-    <section class="wrapper">
-      <header>
-        <h1>Todo</h1>
-        <button class="btn theme-btn light"><img src="./images/icon-moon.svg" alt="moon svg"></button>
-      </header>
-      <form>
-        <span class="round"></span>
-        <input type="text" id="todo-input" placeholder="Create a new todo...">
-        <button class="add-todo">+</button>
-      </form>
-      <div class="todo-container">
-        <ul class="todos">
-        </ul>
-        <div class="actions">
-          <p class="items-left"><span class="count-left">0</span> </p>
-          <button class="btn" id="all">All</button>
-          <button class="btn" id="active">Active</button>
-          <button class="btn" id="completed">Completed</button>
-          <button id="clear-completed" href="#">Clear Completed</button>
+  <body>
+    <main>
+      <section class="wrapper">
+        <header>
+          <h1>Todo</h1>
+          <button class="btn theme-btn light">
+            <img src="./images/icon-moon.svg" alt="moon svg" />
+          </button>
+        </header>
+        <form>
+          <span class="round"></span>
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Create a new todo..."
+          />
+          <button class="add-todo">+</button>
+        </form>
+        <div class="todo-container">
+          <ul class="todos"></ul>
+          <div class="actions">
+            <p class="items-left"><span class="count-left">0</span></p>
+            <button class="btn" id="all">All</button>
+            <button class="btn" id="active">Active</button>
+            <button class="btn" id="completed">Completed</button>
+            <button id="clear-completed" href="#">Clear Completed</button>
+          </div>
         </div>
-      </div>
-      <!--<p class="drag-drop">Drag and drop to reorder list</p>-->
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
-          href="#">Andjela</a>.
-      </div>
-    </section>
-  </main>
-  <script src="script.js"></script>
-</body>
-
+        <!--<p class="drag-drop">Drag and drop to reorder list</p>-->
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Andjela</a>.
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
