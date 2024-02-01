@@ -221,7 +221,7 @@ form #todo-input {
 }
 
 .check-label input:checked+.check-round {
-    background-image: url(../images/icon-check.svg), linear-gradient(#57ddff, #c058f3);
+    background-image: url(./images/icon-check.svg), linear-gradient(#57ddff, #c058f3);
     background-repeat: no-repeat;
     background-position: center;
     width: 25px;
